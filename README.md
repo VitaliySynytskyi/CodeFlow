@@ -1,4 +1,4 @@
-# convertor photo
+# Convertor Photo
 ## Technology's:
 - flask
 - mySQL
