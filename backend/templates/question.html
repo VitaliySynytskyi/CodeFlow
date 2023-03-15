@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CodeFlow - Питання</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="/question">Питання</a></li>
+            <li><a href="#">Теги</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <h1>Питання</h1>
+      <form>
+        <label for="question">Задати питання:</label>
+        <textarea id="question" name="question" rows="5" required></textarea>
+        <label for="tags">Теги:</label>
+        <input type="text" id="tags" name="tags" required>
+        <button type="submit">Задати</button>
+      </form>
+      
+      <section>
+        <article>
+          <h2>Як зробити калькулятор на JavaScript?</h2>
+          <p>Я хочу зробити калькулятор на JavaScript, але не знаю з чого почати. Підкажіть, будь ласка, які методи та функції потрібно використовувати?</p>
+          <div class="tags">
+            <span>javascript</span>
+            <span>calculator</span>
+          </div>
+        </article>
+        
+        <article>
+          <h2>Як зробити зміну кольору тексту при кліку на кнопку?</h2>
+          <p>Я хочу, щоб при кліку на кнопку текст на сторінці змінював колір. Як це можна зробити на JavaScript або jQuery?</p>
+          <div class="tags">
+            <span>javascript</span>
+            <span>jquery</span>
+            <span>color</span>
+          </div>
+        </article>
+        
+        <!-- додайте інші статті тут -->
+        
+      </section>
+    </main>
+    
+    <footer>
+      <p>© 2023 CodeFlow. Усі права захищені.</p>
+    </footer>
+  </body>
+</html>

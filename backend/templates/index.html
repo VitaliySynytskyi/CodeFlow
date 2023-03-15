@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodeFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="/question">Питання</a></li>
+          <li><a href="#">Теги</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </nav>
+      <h1>CodeFlow</h1>
+      <p>StackOverflow аналог</p>
+    </header>
+    <main>
+      <section>
+        <h2>Найпопулярніші питання</h2>
+        <ul>
+          <li><a href="#">Як вивчити React?</a></li>
+          <li><a href="#">Як підключити Bootstrap до проекту?</a></li>
+          <li><a href="#">Як створити форму з валідацією на JavaScript?</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Нові питання</h2>
+        <ul>
+          <li><a href="#">Які переваги використання фреймворку Vue.js?</a></li>
+          <li><a href="#">Як зробити анімацію з використанням CSS?</a></li>
+          <li><a href="#">Як побудувати RESTful API на Node.js?</a></li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>CodeFlow &copy; 2023</p>
+    </footer>
+  </body>
+</html>
