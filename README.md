@@ -1,4 +1,7 @@
-![image](https://user-images.githubusercontent.com/91220971/224810820-2db86cd9-0fa9-4788-86b4-084db904d12d.png)
+<p align="center">
+  <img src="![image](https://user-images.githubusercontent.com/91220971/224810820-2db86cd9-0fa9-4788-86b4-084db904d12d.png)">
+</p>
+
 
 ## About site
 
