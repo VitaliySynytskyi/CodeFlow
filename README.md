@@ -1,5 +1,21 @@
 ![image](https://user-images.githubusercontent.com/91220971/224810820-2db86cd9-0fa9-4788-86b4-084db904d12d.png)
 
+## About site
+
+[Site on Azure](https://codeflow.azurewebsites.net)
+
+## Decomposition of tasks
+- Create Solution ✅
+- Create DB and AppService on Azure ⚠️
+- Connect ORM ⚠️
+- Create Page About with my information ⚠️
+- Create Test Page for Displaying data ⚠️
+- Create Test Page for Сreating objects ⚠️
+- Deploy the project on Azure ✅
+- Loggs ⚠️
+- Create Application Insights ⚠️
+- Connect Application Insights ⚠️
+- Add README on GIT ✅
 
 # CodeFlow
 
@@ -23,3 +39,6 @@ CodeFlow is a valuable resource for developers who are looking for solutions to 
 - Dependency injection: Constructor injection (builtin)
 - Swagger UI: Flask-RESTful-Swagger
 - Deployment to Azure: Azure Web App service
+
+
+
