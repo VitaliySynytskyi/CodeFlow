@@ -1,7 +1,22 @@
 from datetime import datetime
 import os
+from flasgger import Swagger
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+
 app = Flask(__name__)
+swagger = Swagger(app)
+
+
+@app.route('/hello')
+def hello():
+    """
+    A sample endpoint that returns a greeting.
+    ---
+    responses:
+      200:
+        description: A string indicating a greeting.
+    """
+    return 'Hello, world!'
 
 
 @app.route('/')
