@@ -1,10 +1,33 @@
 from datetime import datetime
 import os
 from flasgger import Swagger
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, flash, render_template, request, redirect, url_for, send_from_directory
+from forms import LoginForm, RegistrationForm
 
 app = Flask(__name__)
+app.secret_key = os.environ.get(
+    'SECRET_KEY') or 'a4f728a4c7cb3be47a9e8326d23f6edf'
 swagger = Swagger(app)
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        # тут буде логіка для перевірки даних з форми
+        # та входу користувача на сайт
+        flash('You have been logged in!', 'success')
+        return redirect(url_for('home'))
+    return render_template('login.html', title='Login', form=form)
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('home'))
+    return render_template('register.html', title='Register', form=form)
 
 
 @app.route('/hello')
@@ -20,9 +43,9 @@ def hello():
 
 
 @app.route('/')
-def index():
+def home():
     print('Request for index page received')
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 @app.route('/about')
