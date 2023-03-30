@@ -1,30 +1,13 @@
-<!doctype html>
-<head>
-    <title>CodeFlow</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
-</head>
-<html>
-   <body>
-     <main>
-        <div class="px-4 py-3 my-2 text-center">
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/logo.png') }}" alt="CodeFlow Logo" width="192" height="192"/>
-            <!-- <img  src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-            <h1 class="display-6 fw-bold text-primary">Welcome to CodeFlow</h1>            
-          </div>
-        <form method="post" action="{{url_for('hello')}}">
-            <div class="col-md-6 mx-auto text-center">
-                <label for="name" class="form-label fw-bold fs-5">Could you please tell me your name?</label>
+{% extends 'base.html' %}
 
-                <!-- <p class="lead mb-2">Could you please tell me your name?</p> -->
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                    <input type="text" class="form-control" id="name" name="name" style="max-width: 256px;">
-                  </div>            
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
-                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Say Hello</button>
-                </div>            
-            </div>
-        </form>
-     </main>      
-   </body>
-</html>
+{% block content %}
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to CodeFlow</h1>
+      <p class="lead">Get answers to your programming questions.</p>
+      <hr class="my-4">
+      <p>Join the community of developers.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+    </div>
+  </div>
+{% endblock %}
