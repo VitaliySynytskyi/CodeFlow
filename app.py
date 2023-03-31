@@ -42,7 +42,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route('/hello')
+@app.route('/hello') #/apidocs
 def hello():
     """
     A sample endpoint that returns a greeting.
@@ -76,6 +76,13 @@ def favicon():
 
 @app.route('/health')
 def health():
+    """
+    A sample endpoint that returns info about health.
+    ---
+    responses:
+      200:
+        description: A string indicating that health is ok.
+    """
     return "OK"
 
 if __name__ == '__main__':
