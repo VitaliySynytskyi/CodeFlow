@@ -11,9 +11,10 @@ from database import db
 
 
 app = Flask(__name__)
-app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
-app.config['SECRET_KEY'] = Config.SECRET_KEY
-app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
+
+app.config['SECRET_KEY'] = Config.SECRET_KEY or "a4f728a4c7cb3be47a9e8326d23f3edf"
+# app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
+# app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
 swagger = Swagger(app)
 appinsights = AppInsights(app)
 logging.basicConfig(filename='app.log', level=logging.DEBUG,
