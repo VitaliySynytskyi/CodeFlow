@@ -15,7 +15,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         # тут буде логіка для перевірки даних з форми
-        # та входу користувача на сайт
+        # та входу користувача на сайт ок зроз?
         flash('You have been logged in!', 'success')
         return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
