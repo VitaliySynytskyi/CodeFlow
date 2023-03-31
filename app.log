@@ -1,0 +1,375 @@
+2023-03-31 12:55:28,195 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 12:55:28,195 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 12:55:39,907 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 12:55:39,907 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 12:55:51,903 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 12:55:51,903 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 12:55:56,273 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:55:56] "GET /about HTTP/1.1" 200 -
+2023-03-31 12:55:56,428 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:55:56] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:55:56,454 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:55:56] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:55:59,428 DEBUG app Thread-4 (process_request_thread) : Entering home page
+2023-03-31 12:55:59,430 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:55:59] "GET /home HTTP/1.1" 200 -
+2023-03-31 12:55:59,531 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:55:59] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:56:00,813 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:00] "GET /about HTTP/1.1" 200 -
+2023-03-31 12:56:00,908 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:00] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:56:02,537 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:02] "GET /login HTTP/1.1" 200 -
+2023-03-31 12:56:02,627 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:02] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:56:05,932 DEBUG app Thread-10 (process_request_thread) : Entering home page
+2023-03-31 12:56:05,933 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:05] "GET / HTTP/1.1" 200 -
+2023-03-31 12:56:06,036 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:06] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:56:10,556 DEBUG app Thread-12 (process_request_thread) : Entering hello string
+2023-03-31 12:56:10,556 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:10] "GET /hello HTTP/1.1" 200 -
+2023-03-31 12:56:10,705 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:56:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-03-31 12:57:34,067 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 12:57:34,067 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 12:57:40,377 DEBUG app Thread-1 (process_request_thread) : Entering hello string
+2023-03-31 12:57:40,378 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:40] "GET /hello HTTP/1.1" 200 -
+2023-03-31 12:57:42,460 DEBUG app Thread-2 (process_request_thread) : Entering hello string
+2023-03-31 12:57:42,461 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:42] "GET /hello HTTP/1.1" 200 -
+2023-03-31 12:57:44,970 DEBUG app Thread-3 (process_request_thread) : Request for index page received
+2023-03-31 12:57:44,979 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:44] "GET /home HTTP/1.1" 200 -
+2023-03-31 12:57:45,142 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:45] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:57:58,217 DEBUG app Thread-5 (process_request_thread) : Request for about page received
+2023-03-31 12:57:58,219 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:58] "GET /about HTTP/1.1" 200 -
+2023-03-31 12:57:58,320 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:58] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:57:59,778 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:59] "GET /login HTTP/1.1" 200 -
+2023-03-31 12:57:59,874 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:57:59] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:58:00,542 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:58:00] "GET /register HTTP/1.1" 200 -
+2023-03-31 12:58:00,631 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:58:00] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:59:09,648 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 12:59:09,648 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 12:59:13,446 DEBUG app Thread-1 (process_request_thread) : Request for index page received
+2023-03-31 12:59:13,457 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:13] "GET /home HTTP/1.1" 200 -
+2023-03-31 12:59:13,601 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:13] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:59:15,481 DEBUG app Thread-3 (process_request_thread) : Request for index page received
+2023-03-31 12:59:15,481 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:15] "GET /home HTTP/1.1" 200 -
+2023-03-31 12:59:15,562 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:15] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:59:16,086 DEBUG app Thread-5 (process_request_thread) : Request for about page received
+2023-03-31 12:59:16,088 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:16] "GET /about HTTP/1.1" 200 -
+2023-03-31 12:59:16,173 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:16] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:59:17,143 DEBUG app Thread-7 (process_request_thread) : Request for login page received
+2023-03-31 12:59:17,149 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:17] "GET /login HTTP/1.1" 200 -
+2023-03-31 12:59:17,257 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:17] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 12:59:17,639 DEBUG app Thread-9 (process_request_thread) : Request for register page received
+2023-03-31 12:59:17,644 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:17] "GET /register HTTP/1.1" 200 -
+2023-03-31 12:59:17,730 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 12:59:17] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:03:32,847 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:03:32,848 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:03:41,140 DEBUG app Thread-1 (process_request_thread) : Request for register page received
+2023-03-31 13:03:41,159 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:41] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:03:41,311 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:41] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:03:41,337 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:41] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:03:42,034 DEBUG app Thread-5 (process_request_thread) : Request for index page received
+2023-03-31 13:03:42,037 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:42] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:03:42,149 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:42] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:03:48,303 INFO app Thread-7 (process_request_thread) : Hello, World!
+2023-03-31 13:03:48,304 DEBUG app Thread-7 (process_request_thread) : Entering hello string
+2023-03-31 13:03:48,321 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:48] "GET /hello HTTP/1.1" 200 -
+2023-03-31 13:03:49,155 INFO app Thread-9 (process_request_thread) : Hello, World!
+2023-03-31 13:03:49,156 DEBUG app Thread-9 (process_request_thread) : Entering hello string
+2023-03-31 13:03:49,156 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:03:49] "GET /hello HTTP/1.1" 200 -
+2023-03-31 13:04:23,918 DEBUG app Thread-10 (process_request_thread) : Request for index page received
+2023-03-31 13:04:23,919 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:23] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:04:24,023 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:24] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:04:39,772 INFO app Thread-13 (process_request_thread) : Hello, World!
+2023-03-31 13:04:39,773 DEBUG app Thread-13 (process_request_thread) : Entering hello string
+2023-03-31 13:04:39,788 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:39] "GET /hello HTTP/1.1" 200 -
+2023-03-31 13:04:56,811 DEBUG app Thread-14 (process_request_thread) : Request for login page received
+2023-03-31 13:04:56,832 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:56] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:04:56,943 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:56] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:04:57,610 DEBUG app Thread-18 (process_request_thread) : Request for register page received
+2023-03-31 13:04:57,612 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:57] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:04:57,717 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:04:57] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:20:10,875 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:20:10,876 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:20:19,637 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:20:19,637 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:20:23,754 DEBUG app Thread-1 (process_request_thread) : Request for index page received
+2023-03-31 13:20:23,764 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:23] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:20:23,977 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:23] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:20:27,118 DEBUG app Thread-3 (process_request_thread) : Request for index page received
+2023-03-31 13:20:27,119 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:27] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:20:27,223 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:27] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:20:27,741 DEBUG app Thread-5 (process_request_thread) : Request for about page received
+2023-03-31 13:20:27,743 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:27] "GET /about HTTP/1.1" 200 -
+2023-03-31 13:20:27,863 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:27] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:20:28,916 DEBUG app Thread-7 (process_request_thread) : Request for index page received
+2023-03-31 13:20:28,916 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:28] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:20:29,034 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:29] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:20:37,350 DEBUG app Thread-9 (process_request_thread) : Request for index page received
+2023-03-31 13:20:37,351 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:37] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:20:37,450 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:37] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:20:38,555 DEBUG app Thread-11 (process_request_thread) : Request for login page received
+2023-03-31 13:20:38,556 ERROR app Thread-11 (process_request_thread) : Exception on /login [GET]
+Traceback (most recent call last):
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Howery\Desktop\CodeFlow\CodeFlow\app.py", line 27, in login
+    form = LoginForm()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\form.py", line 73, in __init__
+    super().__init__(formdata=formdata, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\csrf\core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 147, in generate_csrf_token
+    return generate_csrf(
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 36, in generate_csrf
+    secret_key = _get_config(
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 136, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2023-03-31 13:20:38,590 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:38] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2023-03-31 13:20:40,663 DEBUG app Thread-12 (process_request_thread) : Request for register page received
+2023-03-31 13:20:40,663 ERROR app Thread-12 (process_request_thread) : Exception on /register [GET]
+Traceback (most recent call last):
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Howery\Desktop\CodeFlow\CodeFlow\app.py", line 39, in register
+    form = RegistrationForm()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\form.py", line 73, in __init__
+    super().__init__(formdata=formdata, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\csrf\core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 147, in generate_csrf_token
+    return generate_csrf(
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 36, in generate_csrf
+    secret_key = _get_config(
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 136, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2023-03-31 13:20:40,664 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:20:40] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2023-03-31 13:21:06,558 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:21:06,558 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:21:09,555 DEBUG app Thread-1 (process_request_thread) : Request for index page received
+2023-03-31 13:21:09,565 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:21:09] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:21:09,712 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:21:09] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:21:09,746 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:21:09] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:21:10,804 DEBUG app Thread-4 (process_request_thread) : Request for login page received
+2023-03-31 13:21:10,805 ERROR app Thread-4 (process_request_thread) : Exception on /login [GET]
+Traceback (most recent call last):
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Howery\Desktop\CodeFlow\CodeFlow\app.py", line 27, in login
+    form = LoginForm()
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\form.py", line 73, in __init__
+    super().__init__(formdata=formdata, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 286, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\form.py", line 127, in process
+    field.process(formdata, data, extra_filters=field_extra_filters)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\wtforms\csrf\core.py", line 44, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 147, in generate_csrf_token
+    return generate_csrf(
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 36, in generate_csrf
+    secret_key = _get_config(
+  File "C:\Users\Howery\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_wtf\csrf.py", line 136, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2023-03-31 13:21:10,807 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:21:10] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2023-03-31 13:22:25,106 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:22:25,106 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:22:43,587 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:22:43,588 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:22:46,913 DEBUG app Thread-1 (process_request_thread) : Request for index page received
+2023-03-31 13:22:46,942 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:46] "GET /home HTTP/1.1" 200 -
+2023-03-31 13:22:47,110 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:47] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:22:47,491 DEBUG app Thread-4 (process_request_thread) : Request for about page received
+2023-03-31 13:22:47,494 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:47] "GET /about HTTP/1.1" 200 -
+2023-03-31 13:22:47,591 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:47] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:22:48,494 DEBUG app Thread-6 (process_request_thread) : Request for login page received
+2023-03-31 13:22:48,500 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:48] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:22:48,611 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:48] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:22:49,324 DEBUG app Thread-8 (process_request_thread) : Request for register page received
+2023-03-31 13:22:49,330 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:49] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:22:49,438 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:49] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:22:50,093 DEBUG app Thread-10 (process_request_thread) : Request for login page received
+2023-03-31 13:22:50,094 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:50] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:22:50,198 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:22:50] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:10,896 DEBUG app Thread-12 (process_request_thread) : Request for login page received
+2023-03-31 13:23:10,910 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:10] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:23:11,042 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:11] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:12,284 DEBUG app Thread-15 (process_request_thread) : Request for register page received
+2023-03-31 13:23:12,286 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:12] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:23:12,425 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:12] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:13,315 DEBUG app Thread-17 (process_request_thread) : Request for login page received
+2023-03-31 13:23:13,316 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:13] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:23:13,412 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:13] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:13,808 DEBUG app Thread-19 (process_request_thread) : Request for register page received
+2023-03-31 13:23:13,810 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:13] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:23:13,909 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:13] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:15,217 DEBUG app Thread-21 (process_request_thread) : Request for login page received
+2023-03-31 13:23:15,219 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:15] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:23:15,313 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:15] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:17,047 DEBUG app Thread-23 (process_request_thread) : Request for register page received
+2023-03-31 13:23:17,049 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:17] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:23:17,122 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:17] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:17,686 DEBUG app Thread-25 (process_request_thread) : Request for login page received
+2023-03-31 13:23:17,688 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:17] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:23:17,789 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:17] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:23:18,377 DEBUG app Thread-27 (process_request_thread) : Request for register page received
+2023-03-31 13:23:18,378 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:18] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:23:18,488 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:23:18] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:24:10,603 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:24:10,603 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:24:12,425 DEBUG app Thread-1 (process_request_thread) : Request for login page received
+2023-03-31 13:24:12,457 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:12] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:24:12,594 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:12] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:24:13,309 DEBUG app Thread-4 (process_request_thread) : Request for register page received
+2023-03-31 13:24:13,317 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:13] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:24:13,387 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:13] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:24:14,062 DEBUG app Thread-6 (process_request_thread) : Request for login page received
+2023-03-31 13:24:14,064 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:14] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:24:14,129 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:14] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:24:14,633 DEBUG app Thread-8 (process_request_thread) : Request for register page received
+2023-03-31 13:24:14,635 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:14] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:24:14,700 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:14] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:24:15,490 DEBUG app Thread-10 (process_request_thread) : Request for login page received
+2023-03-31 13:24:15,492 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:15] "GET /login HTTP/1.1" 200 -
+2023-03-31 13:24:15,598 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:15] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:24:15,987 DEBUG app Thread-12 (process_request_thread) : Request for register page received
+2023-03-31 13:24:15,989 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:15] "GET /register HTTP/1.1" 200 -
+2023-03-31 13:24:16,087 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 13:24:16] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 13:42:51,543 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:42:51,543 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:44:57,469 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:44:57,469 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 13:45:05,836 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 13:45:05,836 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 14:07:49,417 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-31 14:07:49,417 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-03-31 14:07:55,161 DEBUG app Thread-1 (process_request_thread) : Request for index page received
+2023-03-31 14:07:55,206 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:55] "GET / HTTP/1.1" 200 -
+2023-03-31 14:07:55,541 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:55] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:07:55,586 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:55] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:07:58,988 DEBUG app Thread-5 (process_request_thread) : Request for about page received
+2023-03-31 14:07:58,996 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:58] "GET /about HTTP/1.1" 200 -
+2023-03-31 14:07:59,107 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:59] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:07:59,734 DEBUG app Thread-7 (process_request_thread) : Request for index page received
+2023-03-31 14:07:59,736 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:59] "GET /home HTTP/1.1" 200 -
+2023-03-31 14:07:59,880 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:07:59] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:00,278 DEBUG app Thread-10 (process_request_thread) : Request for about page received
+2023-03-31 14:08:00,279 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:00] "GET /about HTTP/1.1" 200 -
+2023-03-31 14:08:00,343 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:00] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:00,825 DEBUG app Thread-12 (process_request_thread) : Request for index page received
+2023-03-31 14:08:00,826 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:00] "GET /home HTTP/1.1" 200 -
+2023-03-31 14:08:00,896 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:00] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:01,541 DEBUG app Thread-14 (process_request_thread) : Request for login page received
+2023-03-31 14:08:01,552 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:01] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:01,672 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:01] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:02,104 DEBUG app Thread-16 (process_request_thread) : Request for register page received
+2023-03-31 14:08:02,116 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:02] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:02,209 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:02] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:02,638 DEBUG app Thread-18 (process_request_thread) : Request for login page received
+2023-03-31 14:08:02,640 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:02] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:02,708 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:02] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:03,111 DEBUG app Thread-20 (process_request_thread) : Request for register page received
+2023-03-31 14:08:03,112 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:03] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:03,183 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:03] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:03,578 DEBUG app Thread-22 (process_request_thread) : Request for login page received
+2023-03-31 14:08:03,580 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:03] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:03,649 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:03] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:04,022 DEBUG app Thread-24 (process_request_thread) : Request for register page received
+2023-03-31 14:08:04,023 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:04] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:04,094 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:04] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:04,471 DEBUG app Thread-26 (process_request_thread) : Request for login page received
+2023-03-31 14:08:04,472 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:04] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:04,538 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:04] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:04,907 DEBUG app Thread-28 (process_request_thread) : Request for register page received
+2023-03-31 14:08:04,909 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:04] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:04,977 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:04] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:05,377 DEBUG app Thread-30 (process_request_thread) : Request for login page received
+2023-03-31 14:08:05,379 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:05] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:05,447 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:05] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:05,840 DEBUG app Thread-32 (process_request_thread) : Request for register page received
+2023-03-31 14:08:05,841 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:05] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:05,910 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:05] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:06,284 DEBUG app Thread-34 (process_request_thread) : Request for login page received
+2023-03-31 14:08:06,285 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:06] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:06,351 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:06] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:06,699 DEBUG app Thread-36 (process_request_thread) : Request for register page received
+2023-03-31 14:08:06,701 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:06] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:06,772 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:06] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:07,137 DEBUG app Thread-38 (process_request_thread) : Request for login page received
+2023-03-31 14:08:07,138 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:07] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:07,210 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:07] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:07,559 DEBUG app Thread-40 (process_request_thread) : Request for register page received
+2023-03-31 14:08:07,560 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:07] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:07,627 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:07] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:08,110 DEBUG app Thread-42 (process_request_thread) : Request for login page received
+2023-03-31 14:08:08,112 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:08] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:08,180 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:08] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:08,565 DEBUG app Thread-44 (process_request_thread) : Request for register page received
+2023-03-31 14:08:08,566 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:08] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:08,637 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:08] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:09,066 DEBUG app Thread-46 (process_request_thread) : Request for login page received
+2023-03-31 14:08:09,067 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:09] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:09,141 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:09] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:09,556 DEBUG app Thread-48 (process_request_thread) : Request for register page received
+2023-03-31 14:08:09,557 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:09] "GET /register HTTP/1.1" 200 -
+2023-03-31 14:08:09,622 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:09] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:10,146 DEBUG app Thread-50 (process_request_thread) : Request for login page received
+2023-03-31 14:08:10,148 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:10] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:10,211 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:10] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:16,936 DEBUG app Thread-52 (process_request_thread) : Request for login page received
+2023-03-31 14:08:16,954 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:16] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:17,053 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:17] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:17,921 DEBUG app Thread-55 (process_request_thread) : Request for login page received
+2023-03-31 14:08:17,922 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:17] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:17,989 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:17] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:18,975 DEBUG app Thread-57 (process_request_thread) : Request for login page received
+2023-03-31 14:08:18,976 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:18] "GET /login HTTP/1.1" 200 -
+2023-03-31 14:08:19,041 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:19] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:20,090 DEBUG app Thread-59 (process_request_thread) : Request for index page received
+2023-03-31 14:08:20,091 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:20] "GET /home HTTP/1.1" 200 -
+2023-03-31 14:08:20,197 INFO werkzeug Thread-60 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:20] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
+2023-03-31 14:08:35,087 DEBUG app Thread-61 (process_request_thread) : Request for index page received
+2023-03-31 14:08:35,088 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:35] "GET /home HTTP/1.1" 200 -
+2023-03-31 14:08:35,215 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [31/Mar/2023 14:08:35] "[36mGET /static/images/logo.png HTTP/1.1[0m" 304 -
