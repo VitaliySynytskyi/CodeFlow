@@ -4,16 +4,14 @@ from applicationinsights.flask.ext import AppInsights
 from flasgger import Swagger
 from flask import Flask, flash, render_template, request, redirect, url_for, send_from_directory
 from forms import LoginForm, RegistrationForm
-from werkzeug.security import generate_password_hash, check_password_hash
 from models import User
 from config import Config
-from database import db
 
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = Config.SECRET_KEY or "a4f728a4c7cb3be47a9e8326d23f3edf"
-# app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
+app.config['SECRET_KEY'] = Config.SECRET_KEY
+app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
 # app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
 swagger = Swagger(app)
 appinsights = AppInsights(app)
@@ -22,26 +20,26 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 
 
-# @app.route("/login", methods=['GET', 'POST'])
-# def login():
-#     logger.debug('Request for login page received')
-#     form = LoginForm()
-#     if form.validate_on_submit():
-#         # тут буде логіка для перевірки даних з форми
-#         # та входу користувача на сайт
-#         flash('You have been logged in!', 'success')
-#         return redirect(url_for('home'))
-#     return render_template('login.html', title='Login', form=form)
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    logger.debug('Request for login page received')
+    form = LoginForm()
+    if form.validate_on_submit():
+        # тут буде логіка для перевірки даних з форми
+        # та входу користувача на сайт
+        flash('You have been logged in!', 'success')
+        return redirect(url_for('home'))
+    return render_template('login.html', title='Login', form=form)
 
 
-# @app.route('/register', methods=['GET', 'POST'])
-# def register():
-#     logger.debug('Request for register page received')
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         flash(f'Account created for {form.username.data}!', 'success')
-#         return redirect(url_for('home'))
-#     return render_template('register.html', title='Register', form=form)
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    logger.debug('Request for register page received')
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('home'))
+    return render_template('register.html', title='Register', form=form)
 
 
 @app.route('/hello')

@@ -1,6 +1,6 @@
 import os
 import tempfile
-
+from config import Config
 import pytest
 
 from app import create_app, db
@@ -12,7 +12,7 @@ def client():
     app = create_app()
 
     app.config['TESTING'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+    app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
 
     with app.test_client() as client:
         with app.app_context():
