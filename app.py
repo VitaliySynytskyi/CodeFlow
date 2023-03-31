@@ -21,26 +21,26 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 
 
-@app.route("/login", methods=['GET', 'POST'])
-def login():
-    logger.debug('Request for login page received')
-    form = LoginForm()
-    if form.validate_on_submit():
-        # тут буде логіка для перевірки даних з форми
-        # та входу користувача на сайт
-        flash('You have been logged in!', 'success')
-        return redirect(url_for('home'))
-    return render_template('login.html', title='Login', form=form)
+# @app.route("/login", methods=['GET', 'POST'])
+# def login():
+#     logger.debug('Request for login page received')
+#     form = LoginForm()
+#     if form.validate_on_submit():
+#         # тут буде логіка для перевірки даних з форми
+#         # та входу користувача на сайт
+#         flash('You have been logged in!', 'success')
+#         return redirect(url_for('home'))
+#     return render_template('login.html', title='Login', form=form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    logger.debug('Request for register page received')
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('home'))
-    return render_template('register.html', title='Register', form=form)
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     logger.debug('Request for register page received')
+#     form = RegistrationForm()
+#     if form.validate_on_submit():
+#         flash(f'Account created for {form.username.data}!', 'success')
+#         return redirect(url_for('home'))
+#     return render_template('register.html', title='Register', form=form)
 
 
 @app.route('/hello')
