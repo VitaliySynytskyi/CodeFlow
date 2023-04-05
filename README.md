@@ -26,16 +26,17 @@ This will start the development server on http://localhost:5000.
 
 # 🛠️ Technology Stack
 
-- Backend: Flask, Flask-WTF
-- Frontend: HTML/CSS, Bootstrap
-- Database: MySQL
-- ORM: SQLAlchemy
-- Public API:
-- Azure services:
-- Unit testing framework: Pytest
-- Dependency injection: Constructor injection (builtin)
-- Swagger UI: flasgger
-- Deployment to Azure: Azure Web App service
+
+- Backend: Flask - is a web development framework that allows for easy creation of web applications with Python. Flask-WTF is a Flask extension for working with web forms.
+- Frontend: HTML/CSS, Bootstrap - are used for creating the user interface and styling the web pages.
+- Database: MySQL - is a relational database management system used for storing and retrieving data.
+- ORM: SQLAlchemy - is an Object-Relational Mapping library that provides a way to interact with databases using Python objects.
+- Public API - 
+- Azure services - refers to cloud computing services provided by Microsoft Azure, which can be used for hosting, storage, and other services.
+- Unit testing framework: Pytest - is a testing framework for Python that allows for easy creation of tests and test suites.
+- Dependency injection: Constructor injection (builtin) - is a design pattern that allows for the injection of dependencies into objects at runtime. In this case, constructor injection is built into the project.
+- Swagger UI: flasgger - is a tool used for generating interactive API documentation from Swagger-compliant API descriptions.
+- Deployment to Azure: Azure Web App service - is a platform-as-a-service (PaaS) offering from Microsoft Azure that allows for deployment and scaling of web applications.
 
 # 📝 Tasks
 
