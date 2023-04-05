@@ -2,46 +2,71 @@
   <img src="https://user-images.githubusercontent.com/91220971/224810820-2db86cd9-0fa9-4788-86b4-084db904d12d.png">
 </p>
 
+# Welcome to CodeFlow
 
-## About site
+👋 Hi there! CodeFlow is a web application that allows developers to post and answer programming-related questions. It is similar to StackOverflow and was developed using Flask, with a MySQL database and SQLAlchemy as the ORM. The application also makes use of Azure services and the flasgger library for Swagger UI documentation.
 
-[Site on Azure](https://codeflow.azurewebsites.net)
+# 🚀 Getting Started
+To get started with CodeFlow, you'll need to have Python 3 and Flask installed on your machine. Follow the instructions on the official Python and Flask websites to install these dependencies.
 
-## Decomposition of tasks
+Once you have these dependencies installed, you can clone the repository to your local machine using the following command:
+
+`git clone https://github.com/VitaliySynytskyi/CodeFlow.git`
+
+Then, navigate to the project directory and install the remaining dependencies using the following command:
+
+`cd CodeFlow
+pip install -r requirements.txt`
+
+To start the application, simply run:
+
+`python app.py`
+
+This will start the development server on http://localhost:5000.
+
+# 🛠️ Technology Stack
+
+- Backend: Flask, Flask-WTF
+- Frontend: HTML/CSS, Bootstrap
+- Database: MySQL
+- ORM: SQLAlchemy
+- Public API:
+- Azure services:
+- Unit testing framework: Pytest
+- Dependency injection: Constructor injection (builtin)
+- Swagger UI: flasgger
+- Deployment to Azure: Azure Web App service
+
+# 📝 Tasks
+
+The following tasks were completed to develop CodeFlow:
 - Create Solution ✅
 - Create DB and AppService on Azure ✅
 - Connect ORM ✅
 - Create Page About with my information ✅
 - Create Test Page for Displaying data ⚠️
-- Create Test Page for Сreating objects ✅
+- Create Test Page for Creating objects ✅
 - Deploy the project on Azure ✅
-- Loggs ✅
+- Logs ✅
 - Create Application Insights ✅
 - Connect Application Insights ✅
 - Add README on GIT ✅
 
-# CodeFlow
+# 💬 Contributing
 
-CodeFlow is a web application built on Flask that aims to provide a platform for developers to ask and answer programming-related questions. Similar to StackOverflow, CodeFlow allows users to post questions, provide answers, and vote on the best responses.
+Contributions to CodeFlow are always welcome! To contribute:
+1. Fork the repository to your own account
+2. Create a new branch from the main branch
+3. Make your changes and push them to your branch
+4. Create a pull request to merge your changes into the main branch
+5. Follow the code style used in the project and write tests for any new functionality you add.
 
-Users can create an account to participate in the community by asking and answering questions, upvoting or downvoting answers, and commenting on posts. They can also earn reputation points by being helpful and contributing to the community.
+# 📝 About the Author
 
-CodeFlow features a powerful search engine that allows users to easily find questions and answers on specific topics. Additionally, users can subscribe to tags to receive notifications for questions related to their interests.
+- Name: Vitalii Synytskyi
+- Telegram: https://t.me/howery1337
+- Email: howery1337@gmail.com
+- Link to deployed project on Azure: https://codeflow.azurewebsites.net
 
-The application also offers moderation tools to ensure that the content posted is of high quality and meets the community guidelines. Moderators can edit or delete posts, and suspend or ban users who violate the rules.
-
-CodeFlow is a valuable resource for developers who are looking for solutions to programming problems, seeking advice on best practices, or simply want to share their knowledge with the community.
-
-## Technology's:
-- Backend and fronted: flask + react
-- Database: mySQL
-- ORM: SQLAlchemy
-- Public api: 
-- Azure services: 
-- Unit testing framework: pytest & unittest
-- Dependency injection: Constructor injection (builtin)
-- Swagger UI: Flask-RESTful-Swagger
-- Deployment to Azure: Azure Web App service
-
-
+Thank you for your interest in CodeFlow! If you have any questions or feedback, feel free to reach out to me via email or Telegram. 👍
 
