@@ -15,8 +15,7 @@ Once you have these dependencies installed, you can clone the repository to your
 
 Then, navigate to the project directory and install the remaining dependencies using the following command:
 
-`cd CodeFlow
-pip install -r requirements.txt`
+`cd CodeFlow || pip install -r requirements.txt`
 
 To start the application, simply run:
 
