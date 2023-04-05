@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/91220971/224810820-2db86cd9-0fa9-4788-86b4-084db904d12d.png">
 </p>
 
-# Welcome to CodeFlow
+# Welcome to [CodeFlow](https://codeflow.azurewebsites.net)
 
 👋 Hi there! CodeFlow is a web application that allows developers to post and answer programming-related questions. It is similar to StackOverflow and was developed using Flask, with a MySQL database and SQLAlchemy as the ORM. The application also makes use of Azure services and the flasgger library for Swagger UI documentation.
 
