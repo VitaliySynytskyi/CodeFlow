@@ -35,7 +35,6 @@ from app import create_app,db,login_manager,bcrypt,swagger,appinsights,logger
 from models import User
 from forms import login_form,register_form
 
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -167,6 +166,7 @@ def health():
         description: A string indicating that health is ok.
     """
     return "OK"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
