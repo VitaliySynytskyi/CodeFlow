@@ -27,7 +27,6 @@ def test_register(client):
         'username': 'testuser',
         'email': 'testuser@test.com',
         'password': 'testpassword',
-        'confirm_password': 'testpassword'
     })
 
     assert response.status_code == 302
@@ -40,12 +39,11 @@ def test_login(client):
         'username': 'testuser',
         'email': 'testuser@test.com',
         'password': 'testpassword',
-        'confirm_password': 'testpassword'
     })
 
     # login user
     response = client.post('/login', data={
-        'username': 'testuser',
+        'email': 'testuser@test.com',
         'password': 'testpassword'
     }, follow_redirects=True)
 
@@ -64,7 +62,7 @@ def test_logout(client):
 
     # login user
     client.post('/login', data={
-        'username': 'testuser',
+        'email': 'testuser@test.com',
         'password': 'testpassword'
     })
 

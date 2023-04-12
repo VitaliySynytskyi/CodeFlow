@@ -19,7 +19,8 @@ Then, navigate to the project directory and install the remaining dependencies u
 
 To start the application, simply run:
 
-`python app.py`
+- `python manage.py`
+- `python routes.py`
 
 This will start the development server on http://localhost:5000.
 

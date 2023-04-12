@@ -1,89 +1,48 @@
-import os
 import logging
 from applicationinsights.flask.ext import AppInsights
 from flasgger import Swagger
-from flask import Flask, flash, render_template, request, redirect, url_for, send_from_directory
-from forms import LoginForm, RegistrationForm
-from models import User
 from config import Config
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_migrate import Migrate
+from flask_login import (
+    UserMixin,
+    login_user,
+    LoginManager,
+    current_user,
+    logout_user,
+    login_required,
+)
 
+login_manager = LoginManager()
+login_manager.session_protection = "strong"
+login_manager.login_view = "login"
+login_manager.login_message_category = "info"
 
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = Config.SECRET_KEY
-app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
-app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
-swagger = Swagger(app)
-appinsights = AppInsights(app)
+db = SQLAlchemy()
+migrate = Migrate()
+bcrypt = Bcrypt()
+swagger = Swagger()
+appinsights = AppInsights()
 logging.basicConfig(filename='app.log', level=logging.DEBUG,
-                    format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+                format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 logger = logging.getLogger(__name__)
 
+def create_app():
+    app = Flask(__name__)
+    app.secret_key = Config.SECRET_KEY
+    app.config['SECRET_KEY'] = Config.SECRET_KEY
+    app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
+    app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+    appinsights.init_app(app)
+    swagger.init_app(app)
+    login_manager.init_app(app)
+    db.init_app(app)
+    migrate.init_app(app, db)
+    bcrypt.init_app(app)
 
-@app.route("/login", methods=['GET', 'POST'])
-def login():
-    logger.debug('Request for login page received')
-    form = LoginForm()
-    if form.validate_on_submit():
-        # тут буде логіка для перевірки даних з форми
-        # та входу користувача на сайт
-        flash('You have been logged in!', 'success')
-        return redirect(url_for('home'))
-    return render_template('login.html', title='Login', form=form)
+    
+    return app
 
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    logger.debug('Request for register page received')
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('home'))
-    return render_template('register.html', title='Register', form=form)
-
-
-@app.route('/hello') #/apidocs
-def hello():
-    """
-    A sample endpoint that returns a greeting.
-    ---
-    responses:
-      200:
-        description: A string indicating a greeting.
-    """
-    app.logger.info('Hello, World!')
-    logger.debug('Entering hello string')
-    return 'Hello, world!'
-
-
-@app.route('/')
-@app.route("/home")
-def home():
-    logger.debug('Request for index page received')
-    return render_template('home.html')
-
-
-@app.route('/about')
-def about():
-    logger.debug('Request for about page received')
-    return render_template('about.html')
-
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
-@app.route('/health')
-def health():
-    """
-    A sample endpoint that returns info about health.
-    ---
-    responses:
-      200:
-        description: A string indicating that health is ok.
-    """
-    return "OK"
-
-if __name__ == '__main__':
-    app.run(port=8000)

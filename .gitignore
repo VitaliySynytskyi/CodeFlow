@@ -5,6 +5,7 @@ __pycache__/
 test.py
 test_routes.py
 app.log
+DigiCertGlobalRootCA.crt.pem
 # C extensions
 *.so
 
