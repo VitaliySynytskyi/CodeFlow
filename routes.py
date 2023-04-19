@@ -38,25 +38,12 @@ import requests
 
 api_key = 'live_nh2nBNg7o0ezAaPFStcGG8LWXhJSSnDdezIO6YnqDlu4DxKSDjwyXY0hgnOLOe4k'
 def get_random_cat():
-    """
-    A sample endpoint that returns a url of cat.
-    ---
-    responses:
-      200:
-        description: A string indicating a url of cat.
-    """
     response = requests.get(f'https://api.thecatapi.com/v1/images/search?api_key={api_key}')
     cat_data = response.json()
     return cat_data[0]['url']
 
 def get_random_cat_fact():
-    """
-    A sample endpoint that returns a fact about cat.
-    ---
-    responses:
-      200:
-        description: A string indicating a fact about cat.
-    """
+
     response = requests.get(f'https://cat-fact.herokuapp.com/facts/random?animal_type=cat')
     cat_data = response.json()
     return cat_data['text']
@@ -82,6 +69,30 @@ def cats():
     random_cat_url = get_random_cat()
     random_cat_fact = get_random_cat_fact()
     return render_template("cats.html",title="Cats", random_cat_url=random_cat_url, random_cat_fact=random_cat_fact)
+
+@app.route("/api_cats_fact")
+def api_cats_fact():
+    """
+    A sample endpoint that returns a fact about cat.
+    ---
+    responses:
+      200:
+        description: A string indicating a fact about cat.
+    """
+    random_cat_fact = get_random_cat_fact()
+    return random_cat_fact
+    
+@app.route("/api_cats_picture")
+def api_cats_picture():
+    """
+    A sample endpoint that returns a url of cat.
+    ---
+    responses:
+      200:
+        description: A string indicating a url of cat.
+    """
+    random_cat_url = get_random_cat()
+    return random_cat_url
 
 @app.route("/login/", methods=("GET", "POST"), strict_slashes=False)
 def login():
