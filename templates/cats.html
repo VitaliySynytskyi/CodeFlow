@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="jumbotron">
+        <img src="{{ random_cat_url }}" class="img-fluid mx-auto d-block" alt="Random Cat" style="max-width: 400px;">
+        <p class="text-center mt-3" style="font-weight: bold; font-size: 20px;">{{ random_cat_fact }}</p>    
+    </div>
+  </div>
+  <br>
+{% endblock %}

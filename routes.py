@@ -34,6 +34,32 @@ from flask_login import (
 from app import create_app,db,login_manager,bcrypt,swagger,appinsights,logger
 from models import User
 from forms import login_form,register_form
+import requests
+
+api_key = 'live_nh2nBNg7o0ezAaPFStcGG8LWXhJSSnDdezIO6YnqDlu4DxKSDjwyXY0hgnOLOe4k'
+def get_random_cat():
+    """
+    A sample endpoint that returns a url of cat.
+    ---
+    responses:
+      200:
+        description: A string indicating a url of cat.
+    """
+    response = requests.get(f'https://api.thecatapi.com/v1/images/search?api_key={api_key}')
+    cat_data = response.json()
+    return cat_data[0]['url']
+
+def get_random_cat_fact():
+    """
+    A sample endpoint that returns a fact about cat.
+    ---
+    responses:
+      200:
+        description: A string indicating a fact about cat.
+    """
+    response = requests.get(f'https://cat-fact.herokuapp.com/facts/random?animal_type=cat')
+    cat_data = response.json()
+    return cat_data['text']
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -51,6 +77,11 @@ def session_handler():
 def home():
     return render_template("home.html",title="Home")
 
+@app.route("/cats", methods=("GET", "POST"), strict_slashes=False)
+def cats():
+    random_cat_url = get_random_cat()
+    random_cat_fact = get_random_cat_fact()
+    return render_template("cats.html",title="Cats", random_cat_url=random_cat_url, random_cat_fact=random_cat_fact)
 
 @app.route("/login/", methods=("GET", "POST"), strict_slashes=False)
 def login():
