@@ -11,16 +11,25 @@ To get started with CodeFlow, you'll need to have Python 3 and Flask installed o
 
 Once you have these dependencies installed, you can clone the repository to your local machine using the following command:
 
-`git clone https://github.com/VitaliySynytskyi/CodeFlow.git`
+```
+git clone https://github.com/VitaliySynytskyi/CodeFlow.git
+```
 
 Then, navigate to the project directory and install the remaining dependencies using the following command:
 
-`cd CodeFlow || pip install -r requirements.txt`
+```
+cd CodeFlow || pip install -r requirements.txt
+```
 
 To start the application, simply run:
 
-- `python manage.py`
-- `python routes.py`
+```
+python manage.py 
+```
+```
+python routes.py
+```
+
 
 This will start the development server on http://localhost:5000.
 
