@@ -35,11 +35,6 @@ jobs:
           echo "Setting FLASK_APP environment variable"
           export FLASK_APP=routes
 
-      - name: Start Flask development server
-        run: |
-          echo "Starting Flask development server"
-          flask run
-
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Upload artifact for deployment jobs
