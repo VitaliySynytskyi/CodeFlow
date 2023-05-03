@@ -51,10 +51,9 @@ jobs:
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
         with:
           app-name: 'CodeFlow'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FC55BF6A9334DCCB12601AC2F720118}}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FC55BF6A9334DCCB12601AC2F720118 }}
           package: .
-          startup-command: python routes.py
+          configuration-file: web.config
