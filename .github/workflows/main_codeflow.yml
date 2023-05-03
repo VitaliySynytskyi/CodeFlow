@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'CodeFlow'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_132DA02E238841CCB6D84F8F07C07978 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FC55BF6A9334DCCB12601AC2F720118 }}
