@@ -53,7 +53,7 @@ The following tasks were completed to develop CodeFlow:
 - Create DB and AppService on Azure ✅
 - Connect ORM ✅
 - Create Page About with my information ✅
-- Create Test Page for Displaying data ⚠️
+- Create Test Page for Displaying data ✅
 - Create Test Page for Creating objects ✅
 - Deploy the project on Azure ✅
 - Logs ✅
