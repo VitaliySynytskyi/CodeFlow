@@ -31,10 +31,9 @@ logger = logging.getLogger(__name__)
 
 def create_app():
     app = Flask(__name__)
-    app.secret_key = Config.SECRET_KEY
-    app.config['SECRET_KEY'] = Config.SECRET_KEY
-    app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = Config.APPINSIGHTS_INSTRUMENTATIONKEY
-    app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
+    app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
+    app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = os.environ['APPINSIGHTS_INSTRUMENTATIONKEY']
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['SQLALCHEMY_DATABASE_URI']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     appinsights.init_app(app)
     swagger.init_app(app)
