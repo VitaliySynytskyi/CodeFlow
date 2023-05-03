@@ -65,7 +65,7 @@
           <ul class="navbar-nav ml-auto">
             {% if current_user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('home') }}">{{ current_user.username }}</a>
+              <a class="nav-link" href="{{ url_for('profile') }}">{{ current_user.username }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
