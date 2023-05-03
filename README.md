@@ -18,16 +18,15 @@ git clone https://github.com/VitaliySynytskyi/CodeFlow.git
 Then, navigate to the project directory and install the remaining dependencies using the following command:
 
 ```
-cd CodeFlow || pip install -r requirements.txt
+cd CodeFlow 
+pip install -r requirements.txt
 ```
 
 To start the application, simply run:
 
 ```
 python manage.py 
-```
-```
-python routes.py
+flask run
 ```
 
 
@@ -40,7 +39,7 @@ This will start the development server on http://localhost:5000.
 - Frontend: HTML/CSS, Bootstrap - are used for creating the user interface and styling the web pages.
 - Database: MySQL - is a relational database management system used for storing and retrieving data.
 - ORM: SQLAlchemy - is an Object-Relational Mapping library that provides a way to interact with databases using Python objects.
-- Public API - 
+- Public API - thecatapi and cat-fact
 - Azure services - refers to cloud computing services provided by Microsoft Azure, which can be used for hosting, storage, and other services.
 - Unit testing framework: Pytest - is a testing framework for Python that allows for easy creation of tests and test suites.
 - Dependency injection: Constructor injection (builtin) - is a design pattern that allows for the injection of dependencies into objects at runtime. In this case, constructor injection is built into the project.
