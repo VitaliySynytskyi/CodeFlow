@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
       - name: Create and start virtual environment
         run: |
           python -m venv venv
-          source venv/bin/activate
+          venv\Scripts\activate
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -33,11 +33,13 @@ jobs:
         with:
           name: python-app
           path: |
-            . 
+            .
             !venv/
+            !__pycache__/
+            !*.pyc
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     environment:
       name: 'Production'
@@ -52,9 +54,12 @@ jobs:
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
         with:
           app-name: 'CodeFlow'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FC55BF6A9334DCCB12601AC2F720118}}
-          startup-command: 'gunicorn routes:app'
+
+      - name: Upload web.config
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'CodeFlow
