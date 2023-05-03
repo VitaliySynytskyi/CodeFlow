@@ -239,6 +239,10 @@ def about():
     logger.debug('Request for about page received')
     return render_template('about.html')
 
+@app.route("/profile/", methods=("GET", "POST"), strict_slashes=False)
+def profile():
+    logger.debug('Request for about profile received')
+    return render_template('profile.html')
 
 @app.route('/favicon.ico')
 def favicon():
