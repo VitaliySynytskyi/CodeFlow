@@ -60,5 +60,5 @@ jobs:
           app-name: 'CodeFlow'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FC55BF6A9334DCCB12601AC2F720118}}
-          arguments: --startup-file routes.py # Додано параметр для запуску routes.py
           package: .
+          startup-command: 'python routes.py'
