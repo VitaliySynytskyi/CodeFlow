@@ -90,7 +90,6 @@ def get_random_cat():
     return cat_data[0]['url']
 
 def get_random_cat_fact():
-
     response = requests.get(f'https://catfact.ninja/fact')
     cat_data = response.json()
     return cat_data['fact']
