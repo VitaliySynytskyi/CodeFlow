@@ -1,17 +1,21 @@
+from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
     PasswordField,
     BooleanField,
-    IntegerField,
-    DateField,
-    TextAreaField,
+    SubmitField,
+    TextAreaField
 )
-
-from flask_wtf import FlaskForm
-from wtforms.validators import InputRequired, Length, EqualTo, Email, Regexp ,Optional
-import email_validator
-from flask_login import current_user
-from wtforms import ValidationError,validators
+from wtforms.validators import (
+    DataRequired,
+    Length,
+    Email,
+    EqualTo,
+    ValidationError,
+    InputRequired,
+    Regexp,
+    Optional
+)
 from models import User
 
 
@@ -54,3 +58,16 @@ class register_form(FlaskForm):
     def validate_uname(self, uname):
         if User.query.filter_by(username=username.data).first():
             raise ValidationError("Username already taken!")
+        
+class UpdateProfileForm(FlaskForm):
+    username = StringField('user name', validators=[DataRequired(), Length(min=4, max=25)])    
+    password = PasswordField('password', validators=[DataRequired()])
+
+
+class PostForm(FlaskForm):
+    title = StringField('title', validators=[DataRequired()])
+    content = TextAreaField('content', validators=[DataRequired()])
+
+class SearchForm(FlaskForm):
+    query = StringField('Post Title', validators=[DataRequired()])
+    submit = SubmitField('Search') 

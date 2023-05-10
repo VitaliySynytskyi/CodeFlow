@@ -2,7 +2,7 @@ import logging
 from applicationinsights.flask.ext import AppInsights
 from flasgger import Swagger
 from config import Config
-from flask import Flask
+from flask import Flask, render_template, redirect, url_for, flash, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
@@ -79,8 +79,8 @@ from flask_login import (
 )
 
 from app import create_app,db,login_manager,bcrypt,swagger,appinsights,logger
-from models import User
-from forms import login_form,register_form
+from models import Post, User
+from forms import PostForm, login_form,register_form
 import requests
 
 #картинки про котів
@@ -261,6 +261,66 @@ def health():
     """
     return "OK"
 
+@app.route('/blog')
+def blog():
+    posts = Post.query.all()
+    return render_template('blog.html', posts=posts)
+
+
+@app.route('/post/<int:post_id>')
+def detail(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('detail.html', post=post)
+
+@app.route('/post/new', methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(
+            title=form.title.data,
+            content=form.content.data,
+            author=current_user
+        )
+        db.session.add(post)
+        db.session.commit()
+        flash('post created')
+        return redirect(url_for('blog'))
+    return render_template('new_post.html', form=form)
+
+
+@app.route('/post/<int:post_id>/delete')
+@login_required
+def delete(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('post deleted', 'success')
+    return redirect(url_for('home'))
+
+
+@app.route('/post/<int:post_id>/update', methods=['GET', 'POST'])
+@login_required
+def update(post_id):
+    post = Post.query.get_or_404(post_id)
+    
+    if post.author != current_user:
+        abort(403)
+
+    form = PostForm()
+    
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('post updated', 'success')
+        return redirect(url_for('detail', post_id=post.id))
+    elif request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+        return render_template('update.html', form=form)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
