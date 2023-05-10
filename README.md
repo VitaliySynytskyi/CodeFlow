@@ -79,3 +79,9 @@ Contributions to CodeFlow are always welcome! To contribute:
 
 Thank you for your interest in CodeFlow! If you have any questions or feedback, feel free to reach out to me via email or Telegram. 👍
 
+# 📒 Lab 3 
+- I introduce a new feature that involves creating a blog where the most commonly asked questions will be addressed in an aesthetically pleasing manner.
+- Oleksandr Zhuk
+- [My project](https://github.com/SashaBeetle/Zhuk.University.Tachka)
+- [Pull Request](https://github.com/VitaliySynytskyi/CodeFlow/commit/9959ca204b9be6abd6e9cf9d48819ce9ab3988b5)
+
