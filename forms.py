@@ -68,6 +68,7 @@ class PostForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
     content = TextAreaField('content', validators=[DataRequired()])
 
+#форма для пошуку в постах
 class SearchForm(FlaskForm):
     query = StringField('Post Title', validators=[DataRequired()])
-    submit = SubmitField('Search') 
+    submit = SubmitField('Search')    

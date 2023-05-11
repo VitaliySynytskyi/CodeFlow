@@ -80,7 +80,7 @@ from flask_login import (
 
 from app import create_app,db,login_manager,bcrypt,swagger,appinsights,logger
 from models import Post, User
-from forms import PostForm, login_form,register_form
+from forms import PostForm, SearchForm, login_form,register_form
 import requests
 
 #картинки про котів
@@ -321,6 +321,18 @@ def update(post_id):
         form.title.data = post.title
         form.content.data = post.content
         return render_template('update.html', form=form)
+    
+@app.route('/post/search' , methods=['GET', 'POST'])
+def search():
+    form = SearchForm()  
+    if form.validate_on_submit():
+        posts = Post.query.filter(Post.title.like(f"%{form.query.data}%")).all()
+        if posts:
+            return render_template('search.html', posts=posts , form=form)
+        else:
+            flash('No such post has been found!','danger')
+            return render_template('search.html',form=form)    
+    return render_template('search.html', form=form)  
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
