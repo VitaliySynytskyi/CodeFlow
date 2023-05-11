@@ -80,7 +80,7 @@ from flask_login import (
 
 from app import create_app,db,login_manager,bcrypt,swagger,appinsights,logger
 from models import Post, User
-from forms import PostForm, SearchForm, login_form,register_form
+from forms import PostForm, SearchForm, UpdateProfileForm, login_form,register_form
 import requests
 
 #картинки про котів
@@ -333,6 +333,20 @@ def search():
             flash('No such post has been found!','danger')
             return render_template('search.html',form=form)    
     return render_template('search.html', form=form)  
+
+@app.route('/change', methods=['GET', 'POST'])
+@login_required
+def change_profile():
+    form = UpdateProfileForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.password = bcrypt.generate_password_hash(
+            form.password.data).decode('utf-8')
+        db.session.commit()
+        flash('Update successfully', 'success')
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+    return render_template('change_profile.html', form=form)  
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
