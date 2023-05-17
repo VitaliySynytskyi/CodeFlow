@@ -332,12 +332,14 @@ def update(post_id):
         post.title = form.title.data
         post.content = form.content.data
         db.session.commit()
-        flash('post updated', 'success')
+        flash('Post updated', 'success')
         return redirect(url_for('detail', post_id=post.id))
     elif request.method == 'GET':
         form.title.data = post.title
         form.content.data = post.content
-        return render_template('update.html', form=form)
+        return render_template('update.html', form=form, post=post)
+
+
     
 @app.route('/post/search' , methods=['GET', 'POST'])
 def search():
