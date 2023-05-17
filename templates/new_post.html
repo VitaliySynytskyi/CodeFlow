@@ -11,7 +11,6 @@
             display: inline-block;
             width: auto;
         }
-
     </style>
 {% endblock %}
 
@@ -33,7 +32,7 @@
 
                     <div class="form-group">
                         {{ form.content.label }}
-                        {{ form.content(class="form-control", rows=5) }}
+                        {{ form.content(class="form-control", rows=5)|escape }}
                         {% if form.content.errors %}
                             <div class="text-danger">{{ form.content.errors[0] }}</div>
                         {% endif %}

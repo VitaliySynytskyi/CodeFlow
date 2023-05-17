@@ -44,11 +44,11 @@ class register_form(FlaskForm):
         ]
     )
     email = StringField(validators=[InputRequired(), Email(), Length(1, 64)])
-    password = PasswordField(validators=[InputRequired(), Length(6, 72)])
+    password = PasswordField(validators=[InputRequired(), Length(8, 72)])
     confirm_password = PasswordField(
         validators=[
             InputRequired(),
-            Length(6, 72),
+            Length(8, 72),
             EqualTo("password", message="Passwords must match !"),
         ]
     )
@@ -78,7 +78,6 @@ class UpdateProfileForm(FlaskForm):
 class PostForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
     content = TextAreaField('content', validators=[DataRequired()])
-    image_url = StringField('Image URL')
 
 #форма для пошуку в постах
 class SearchForm(FlaskForm):

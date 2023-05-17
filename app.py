@@ -7,6 +7,7 @@ from flask import Flask, render_template, redirect, url_for, flash, request, abo
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
+import emoji
 from flask_login import (
     UserMixin,
     login_user,
@@ -57,7 +58,7 @@ from flask import (
     session
 )
 
-from datetime import timedelta
+from datetime import datetime, timedelta
 from sqlalchemy.exc import (
     IntegrityError,
     DataError,
@@ -102,7 +103,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 app = create_app()
-
+app.jinja_env.filters['emojize'] = emoji.emojize
 @app.before_request
 def session_handler():
     session.permanent = True
@@ -266,7 +267,7 @@ def health():
 @app.route('/blog')
 def blog():
     page = request.args.get('page', 1, type=int)
-    per_page = 3
+    per_page = 6
     posts = Post.query.paginate(page=page, per_page=per_page)
     total_pages = posts.pages
     return render_template('blog.html', posts=posts.items, pagination=posts, total_pages=total_pages)
@@ -278,21 +279,30 @@ def detail(post_id):
     post = Post.query.get_or_404(post_id)
     return render_template('detail.html', post=post)
 
+
+
 @app.route('/post/new', methods=['GET', 'POST'])
 @login_required
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
+        title = form.title.data
+        content = form.content.data
+        # Замінюємо емодзі на текст перед збереженням
+        content_text = emoji.demojize(content)
+        
         post = Post(
-            title=form.title.data,
-            content=form.content.data,
-            author=current_user
+            title=title,
+            date=datetime.now(),
+            content=content_text,
+            user_id=current_user.id
         )
         db.session.add(post)
         db.session.commit()
-        flash('post created')
+        flash('Your post has been created!', 'success')
         return redirect(url_for('blog'))
     return render_template('new_post.html', form=form)
+
 
 
 @app.route('/post/<int:post_id>/delete')
@@ -362,11 +372,6 @@ def change_profile():
         form.username.data = current_user.username
 
     return render_template('change_profile.html', form=form, errors=form.errors)
-
-
-
-
-
 
 
 if __name__ == "__main__":

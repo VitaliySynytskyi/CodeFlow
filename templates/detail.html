@@ -9,7 +9,7 @@
                 <small>Date: {{ post.date.strftime('%Y-%m-%d') }}</small>
                 <hr>
                 <div class="post-content" style="white-space: pre-wrap;">
-                    {{ post.content | safe }}
+                    {{ post.content | emojize | safe }}
                 </div>
             </div>
         </div>
