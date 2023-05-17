@@ -2,6 +2,18 @@
 {% block title %}CodeFlow - User Dashboard{% endblock %}
 
 {% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-success">
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+
   <div class="row">
     <div class="col-md-3">
       <div class="card mb-3">

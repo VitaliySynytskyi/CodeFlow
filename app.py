@@ -1,4 +1,5 @@
 import logging
+from math import ceil
 from applicationinsights.flask.ext import AppInsights
 from flasgger import Swagger
 from config import Config
@@ -150,7 +151,7 @@ def login():
     if form.validate_on_submit():
         try:
             user = User.query.filter_by(email=form.email.data).first()
-            if check_password_hash(user.pwd, form.pwd.data):
+            if check_password_hash(user.password, form.password.data):
                 login_user(user)
                 return redirect(url_for('home'))
             else:
@@ -175,18 +176,18 @@ def register():
     if form.validate_on_submit():
         try:
             email = form.email.data
-            pwd = form.pwd.data
+            password = form.password.data
             username = form.username.data
             
             newuser = User(
                 username=username,
                 email=email,
-                pwd=bcrypt.generate_password_hash(pwd),
+                password=bcrypt.generate_password_hash(password),
             )
     
             db.session.add(newuser)
             db.session.commit()
-            flash(f"Account Succesfully created", "success")
+            flash(f"Account Successfully created", "success")
             return redirect(url_for("login"))
 
         except InvalidRequestError:
@@ -206,13 +207,14 @@ def register():
             flash(f"Error connecting to the database", "danger")
         except BuildError:
             db.session.rollback()
-            flash(f"An error occured !", "danger")
-    return render_template("auth.html",
+            flash(f"An error occurred!", "danger")
+    return render_template(
+        "auth.html",
         form=form,
         text="Create account",
         title="Register",
         btn_action="Register account"
-        )
+    )
 
 @app.route("/logout")
 @login_required
@@ -263,8 +265,12 @@ def health():
 
 @app.route('/blog')
 def blog():
-    posts = Post.query.all()
-    return render_template('blog.html', posts=posts)
+    page = request.args.get('page', 1, type=int)
+    per_page = 3
+    posts = Post.query.paginate(page=page, per_page=per_page)
+    total_pages = posts.pages
+    return render_template('blog.html', posts=posts.items, pagination=posts, total_pages=total_pages)
+
 
 
 @app.route('/post/<int:post_id>')
@@ -334,19 +340,34 @@ def search():
             return render_template('search.html',form=form)    
     return render_template('search.html', form=form)  
 
+
 @app.route('/change', methods=['GET', 'POST'])
 @login_required
 def change_profile():
     form = UpdateProfileForm()
+
     if form.validate_on_submit():
-        current_user.username = form.username.data
-        current_user.password = bcrypt.generate_password_hash(
-            form.password.data).decode('utf-8')
-        db.session.commit()
-        flash('Update successfully', 'success')
+        if bcrypt.check_password_hash(current_user.password, form.old_password.data):
+            current_user.username = form.username.data
+            current_user.password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+            db.session.commit()
+
+            flash('Profile updated successfully', 'success')
+            return redirect(url_for('profile'))
+
+        else:
+            flash('Invalid old password. Please try again.', 'danger')
+
     elif request.method == 'GET':
         form.username.data = current_user.username
-    return render_template('change_profile.html', form=form)  
+
+    return render_template('change_profile.html', form=form, errors=form.errors)
+
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
