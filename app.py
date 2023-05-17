@@ -289,10 +289,11 @@ def new_post():
         title = form.title.data
         content = form.content.data
         # Замінюємо емодзі на текст перед збереженням
+        title_text = emoji.demojize(title)
         content_text = emoji.demojize(content)
         
         post = Post(
-            title=title,
+            title=title_text,
             date=datetime.now(),
             content=content_text,
             user_id=current_user.id
