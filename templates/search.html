@@ -30,8 +30,8 @@
         {% for post in posts %}
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title"><a href="{{ url_for('detail', post_id=post.id) }}" style="text-decoration: none; color: black;">{{ post.title }}</a></h6>
-                <p class="card-text">{{ post.content[:100] }}{% if post.content|length > 100 %}...{% endif %}</p>
+                <h6 class="card-title"><a href="{{ url_for('detail', post_id=post.id) }}" style="text-decoration: none; color: black;">{{ post.title | emojize }}</a></h6>
+                <p class="card-text">{{ post.content[:100]| emojize }}{% if post.content|length > 100 %}...{% endif %}</p>
                 {% if post.content|length > 100 %}
                 <a href="{{ url_for('detail', post_id=post.id) }}" class="btn btn-primary">Read More</a>
                 {% endif %}
