@@ -24,7 +24,7 @@
 
                     <div class="form-group">
                         {{ form.title.label }}
-                        {{ form.title(class="form-control") }}
+                        {{ form.title(class="form-control") | emojize}}
                         {% if form.title.errors %}
                             <div class="text-danger">{{ form.title.errors[0] }}</div>
                         {% endif %}
@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         {{ form.content.label }}
-                        {{ form.content(class="form-control", rows=5)|escape }}
+                        {{ form.content(class="form-control", rows=5)|escape | emojize}}
                         {% if form.content.errors %}
                             <div class="text-danger">{{ form.content.errors[0] }}</div>
                         {% endif %}

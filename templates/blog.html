@@ -22,7 +22,7 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
+                        <h5 class="card-title">{{ post.title | emojize}}</h5>
                         <p class="card-text">{{ post.content[:100] | emojize}}...</p>
                         <a href="{{ url_for('detail', post_id=post.id) }}" class="btn btn-primary">Read More</a>
                         {% if post.author == current_user %}

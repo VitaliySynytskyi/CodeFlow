@@ -2,9 +2,9 @@
 
 {% block content %}
     <div class="d-flex flex-column align-items-start">
-        <div class="card mb-3">
+        <div class="card mb-3 fullscreen-card"> <!-- Доданий клас fullscreen-card -->
             <div class="card-body">
-                <h3>{{ post.title }}</h3>
+                <h3>{{ post.title | emojize}}</h3>
                 <small>Author: {{ post.author.username }}</small>
                 <small>Date: {{ post.date.strftime('%Y-%m-%d') }}</small>
                 <hr>
