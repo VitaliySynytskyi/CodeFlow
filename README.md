@@ -96,5 +96,5 @@ ___
 - Task: Code Review
 - Denys Velychko
 - [My Project](https://github.com/Shushpin/Velychko.LvivUniversity.PersonalProject)
-- [Pull Request]()
+- [Pull Request](https://github.com/Shushpin/CodeFlow/pull/1)
 
