@@ -1,4 +1,5 @@
 import logging
+from flask_dance.contrib.google import make_google_blueprint, google
 from math import ceil
 from applicationinsights.flask.ext import AppInsights
 from flasgger import Swagger
@@ -43,6 +44,12 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     bcrypt.init_app(app)
+    google_blueprint = make_google_blueprint(
+    client_id=os.environ['FN_CLIENT_ID'],
+    client_secret=os.environ['FN_CLIENT_SECRET'],
+    scope=["profile", "email"]
+    )
+    app.register_blueprint(google_blueprint, url_prefix="/login")
 
     
     return app
@@ -160,13 +167,15 @@ def login():
         except Exception as e:
             flash(e, "danger")
 
+    if google.authorized:
+        return redirect(url_for('google.login'))
+
     return render_template("auth.html",
         form=form,
         text="Login",
         title="Login",
         btn_action="Login"
-        )
-
+    )
 
 
 # Register route
@@ -220,6 +229,7 @@ def register():
 @app.route("/logout")
 @login_required
 def logout():
+    app.google_blueprint.session.clear()
     logout_user()
     return redirect(url_for('login'))
 
