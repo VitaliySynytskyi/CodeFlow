@@ -2,7 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+test.py
+test_routes.py
+app.log
+mysql.pem
+migrations
+.vscode/
 # C extensions
 *.so
 

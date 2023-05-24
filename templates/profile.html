@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}CodeFlow - User Dashboard{% endblock %}
+
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-success">
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mb-3">
+        <div class="card-header">Profile</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" value="{{ current_user.username }}" disabled>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" value="{{ current_user.email }}" disabled>
+            </div>
+            <a href="{{ url_for('change_profile') }}" class="btn btn-primary btn-block">Edit Profile</a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card mb-3">
+        <div class="card-header">Questions and Answers</div>
+        <div class="card-body">
+          {% if questions %}
+            <h5>Questions:</h5>
+            <ul class="list-group">
+              {% for question in questions %}
+                <li class="list-group-item"><a href="{{ url_for('home', question_id=question.id) }}">{{ question.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No questions found.</p>
+          {% endif %}
+          {% if answers %}
+            <h5>Answers:</h5>
+            <ul class="list-group">
+              {% for answer in answers %}
+                <li class="list-group-item"><a href="{{ url_for('home', question_id=answer.question_id) }}">{{ answer.question.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No answers found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

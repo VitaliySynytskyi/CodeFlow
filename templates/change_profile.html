@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Change Username and Password</h2>
+        </div>
+        <div class="card-body">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <div class="alert alert-{{ messages[0][1] }}">
+            {{ messages[0][0] }}
+          </div>
+          {% endif %}
+          {% endwith %}
+
+          <form action="" method="post" class="form">
+            {{ form.csrf_token }}
+
+            <div class="form-group">
+              <label for="old_password">Old Password:</label>
+              {{ form.old_password(class="form-control", id="old_password") }}
+              {% if errors is defined and errors.old_password %}
+              <ul class="errors">
+                {% for error in errors.old_password %}
+                <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <label for="username">New Username:</label>
+              {{ form.username(class="form-control", id="username") }}
+              {% if errors is defined and errors.username %}
+              <ul class="errors">
+                {% for error in errors.username %}
+                <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <label for="password">New Password:</label>
+              {{ form.password(class="form-control", id="password") }}
+              {% if errors is defined and errors.password %}
+              <ul class="errors">
+                {% for error in errors.password %}
+                <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <label for="confirm_password">Confirm New Password:</label>
+              {{ form.confirm_password(class="form-control", id="confirm_password") }}
+              {% if errors is defined and errors.confirm_password %}
+              <ul class="errors">
+                {% for error in errors.confirm_password %}
+                <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary"
+                onclick="return confirm('Are you sure you want to proceed?')">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

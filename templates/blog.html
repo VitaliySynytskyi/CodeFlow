@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Blog page</h3>
+    <br>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert-success">
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+
+    <a href="{{ url_for('new_post') }}" class="btn btn-primary mb-3">New post</a>
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title | emojize}}</h5>
+                        <p class="card-text">{{ post.content[:100] | emojize}}...</p>
+                        <a href="{{ url_for('detail', post_id=post.id) }}" class="btn btn-primary">Read More</a>
+                        {% if post.author == current_user %}
+                            <a href="{{ url_for('delete', post_id=post.id) }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ url_for('update', post_id=post.id) }}" class="btn btn-primary">Update</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <ul class="pagination mt-3">
+        {% if pagination.has_prev %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('blog', page=pagination.prev_num) }}">Previous</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+        {% endif %}
+
+        {% for num in pagination.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if num %}
+                {% if num != pagination.page %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ url_for('blog', page=num) }}">{{ num }}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                {% endif %}
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if pagination.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('blog', page=pagination.next_num) }}">Next</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Next</span>
+            </li>
+        {% endif %}
+    </ul>
+
+{% endblock %}

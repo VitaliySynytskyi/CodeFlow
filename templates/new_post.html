@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    <style>
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control-file {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h3 class="mb-4">New Post</h3>
+                <form method="post" enctype="multipart/form-data">
+                    {{ form.csrf_token }}
+
+                    <div class="form-group">
+                        {{ form.title.label }}
+                        {{ form.title(class="form-control") }}
+                        {% if form.title.errors %}
+                            <div class="text-danger">{{ form.title.errors[0] }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.content.label }}
+                        {{ form.content(class="form-control", rows=5)|escape }}
+                        {% if form.content.errors %}
+                            <div class="text-danger">{{ form.content.errors[0] }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

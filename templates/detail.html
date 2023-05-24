@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex flex-column align-items-start">
+        <div class="card mb-3 fullscreen-card"> <!-- Доданий клас fullscreen-card -->
+            <div class="card-body">
+                <h3>{{ post.title | emojize}}</h3>
+                <small>Author: {{ post.author.username }}</small>
+                <small>Date: {{ post.date.strftime('%Y-%m-%d') }}</small>
+                <hr>
+                <div class="post-content" style="white-space: pre-wrap;">
+                    {{ post.content | emojize | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
