@@ -92,3 +92,9 @@ ___
 - [My Project](https://github.com/npogoncuk/web-project)
 - [Pull Request](https://github.com/npogoncuk/CodeFlow/pull/1#pullrequestreview-1442350650)
 
+___
+- Task: Code Review
+- Denys Velychko
+- [My Project](https://github.com/Shushpin/Velychko.LvivUniversity.PersonalProject)
+- [Pull Request](https://github.com/Shushpin/CodeFlow/pull/1)
+
