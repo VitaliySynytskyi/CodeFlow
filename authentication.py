@@ -1,10 +1,11 @@
 # authentication.py
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, request, url_for, flash
 from flask_login import login_required, login_user, logout_user
-
-from app import app, bcrypt, db
+from app import app, bcrypt, db, oauth
 from models import User
 from forms import login_form, register_form
+import os
+import secrets
 
 @app.route("/login/", methods=("GET", "POST"), strict_slashes=False)
 def login():
@@ -19,6 +20,34 @@ def login():
             flash("Invalid Username or password!", "danger")
 
     return render_template("auth.html", form=form, text="Login", title="Login", btn_action="Login")
+
+@app.route('/login/google/')
+def google():
+    GOOGLE_CLIENT_ID = os.getenv('FN_CLIENT_ID')
+    GOOGLE_CLIENT_SECRET = os.getenv('FN_CLIENT_SECRET')
+
+    CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
+    oauth.register(
+        name='google',
+        client_id=GOOGLE_CLIENT_ID,
+        client_secret=GOOGLE_CLIENT_SECRET,
+        server_metadata_url=CONF_URL,
+        client_kwargs={
+            'scope': 'openid email profile'
+        }
+    )
+
+    # Redirect to google_auth function
+    redirect_uri = url_for('google_auth', _external=True)
+    print(redirect_uri)
+    return oauth.google.authorize_redirect(redirect_uri)
+
+@app.route('/google/auth/')
+def google_auth():
+    token = oauth.google.authorize_access_token()
+    user = oauth.google.parse_id_token(token)
+    print(" Google User ", user)
+    return redirect('/')
 
 # Register route
 @app.route("/register/", methods=("GET", "POST"), strict_slashes=False)

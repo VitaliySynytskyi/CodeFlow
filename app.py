@@ -1,8 +1,7 @@
 # app.py
 import logging
-import os
 from datetime import datetime, timedelta
-
+import os
 import emoji
 from flask import Flask, render_template, redirect, flash, send_from_directory, url_for, session, request, abort
 from flask_bcrypt import Bcrypt
@@ -10,7 +9,7 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
-
+from authlib.integrations.flask_client import OAuth
 from applicationinsights.flask.ext import AppInsights
 
 from config import Config
@@ -18,9 +17,12 @@ from config import Config
 app = Flask(__name__)
 app.config.from_object(Config)
 
+app.secret_key = os.urandom(12)
+
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 logger = logging.getLogger(__name__)
 
+oauth = OAuth(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
