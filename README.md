@@ -25,8 +25,8 @@ pip install -r requirements.txt
 To start the application, simply run:
 
 ```
-python manage.py 
-flask run
+python app.py deploy
+python app.py run
 ```
 
 
