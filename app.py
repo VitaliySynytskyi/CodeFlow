@@ -1,4 +1,5 @@
 # app.py
+import argparse
 import logging
 from datetime import datetime, timedelta
 import os
@@ -47,6 +48,34 @@ from authentication import *
 from blog import *
 from profile_1 import *
 
+@login_manager.user_loader
+def load_user(user_id):
+    # Import User here, where it's actually needed
+    from models import User
+    return User.query.get(int(user_id))
+
+from flask_migrate import Migrate, upgrade, init, stamp
+
+def deploy():
+    """Run deployment tasks."""
+    with app.app_context():
+        db.create_all()
+
+        # migrate database to latest revision
+        init(directory='migrations')
+        stamp(directory='migrations')
+        Migrate(directory='migrations')
+        upgrade(directory='migrations')
+
+def run_server():
+    app.run(host='0.0.0.0')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    parser = argparse.ArgumentParser(description="Run the Flask server or perform deployment tasks.")
+    parser.add_argument('command', choices=['run', 'deploy'], help="Either 'run' to start the server or 'deploy' to perform deployment tasks.")
+    args = parser.parse_args()
+
+    if args.command == 'run':
+        run_server()
+    elif args.command == 'deploy':
+        deploy()

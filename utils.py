@@ -1,7 +1,8 @@
 # utils.py
+import os
 import requests
 
-api_key = 'live_nh2nBNg7o0ezAaPFStcGG8LWXhJSSnDdezIO6YnqDlu4DxKSDjwyXY0hgnOLOe4k'
+api_key = os.getenv('api_key')
 
 def get_random_cat():
     response = requests.get(f'https://api.thecatapi.com/v1/images/search?api_key={api_key}')
