@@ -68,7 +68,7 @@ def deploy():
         upgrade(directory='migrations')
 
 def run_server():
-    app.run(host='0.0.0.0')
+    app.run(ssl_context="adhoc")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the Flask server or perform deployment tasks.")
