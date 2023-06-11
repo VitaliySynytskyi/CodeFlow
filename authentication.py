@@ -45,11 +45,28 @@ def google():
 @app.route('/google/auth/')
 def google_auth():
     token = oauth.google.authorize_access_token()
-    user = oauth.google.parse_id_token(token)
-    print(" Google User ", user)
-    return redirect('/')
+    if not token:
+        flash("Failed to authorize with Google.", "danger")
+        return redirect(url_for('login'))
 
-# Register route
+    user_info = oauth.google.parse_id_token(token)
+    email = user_info.get('email')
+    user = User.query.filter_by(email=email).first()
+
+    if not user:
+        user = User(
+            username=user_info.get('name'),
+            email=email,
+            password=bcrypt.generate_password_hash(secrets.token_hex(16)),  # Generating random password as Google doesn't provide one
+        )
+
+        db.session.add(user)
+        db.session.commit()
+
+    login_user(user)
+    flash("Successfully logged in with Google.", "success")
+    return redirect(url_for('home'))
+
 @app.route("/register/", methods=("GET", "POST"), strict_slashes=False)
 def register():
     form = register_form()
@@ -58,7 +75,7 @@ def register():
         email = form.email.data
         password = form.password.data
         username = form.username.data
-        
+
         newuser = User(
             username=username,
             email=email,
