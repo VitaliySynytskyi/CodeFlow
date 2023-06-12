@@ -39,9 +39,11 @@ login_manager.login_message_category = "info"
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# Move your route handlers to the bottom of the file
+@app.before_request
+def session_handler():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(days=31)
 
-# Import your route handlers from separate files
 from home import *
 from cats import *
 from authentication import *
@@ -50,7 +52,6 @@ from profile_1 import *
 
 @login_manager.user_loader
 def load_user(user_id):
-    # Import User here, where it's actually needed
     from models import User
     return User.query.get(int(user_id))
 

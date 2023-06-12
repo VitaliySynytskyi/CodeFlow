@@ -39,7 +39,7 @@ def google():
 
     # Redirect to google_auth function
     redirect_uri = url_for('google_auth', _external=True, _scheme='https')
-    print(redirect_uri)
+    # print(redirect_uri)
     return oauth.google.authorize_redirect(redirect_uri)
 
 @app.route('/google/auth/')
@@ -64,7 +64,6 @@ def google_auth():
         db.session.commit()
 
     login_user(user)
-    flash("Successfully logged in with Google.", "success")
     return redirect(url_for('home'))
 
 @app.route("/register/", methods=("GET", "POST"), strict_slashes=False)

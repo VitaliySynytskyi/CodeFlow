@@ -7,7 +7,11 @@
       <p class="lead">Get answers to your programming questions.</p>
       <hr class="my-4">
       <p>Join the community of developers.</p>
-      <a class="btn btn-primary btn-lg" href="login/" role="button">Get Started</a>
+      {% if current_user.is_authenticated %}
+      <a class="btn btn-primary btn-lg" href="blog" role="button">Get Started</a>
+      {% else %}
+      <a class="btn btn-primary btn-lg" href="login" role="button">Get Started</a>
+      {% endif %}
     </div>
   </div>
 {% endblock %}

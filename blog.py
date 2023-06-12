@@ -50,7 +50,7 @@ def new_post():
         content_text = emoji.demojize(content)
         
         # Додамо аналіз почуттів
-        sentiment = sentiment_analysis_example(client, content_text)
+        sentiment = sentiment_analysis_example(client, title_text+content_text)
 
         if sentiment == "negative":
             flash('Your post has negative sentiment! Please modify your post', 'warning')
@@ -101,7 +101,7 @@ def update(post_id):
         content_text = emoji.demojize(content)
         
         # Додамо аналіз почуттів
-        sentiment = sentiment_analysis_example(client, content_text)
+        sentiment = sentiment_analysis_example(client, title_text+content_text)
         
         if sentiment == "negative":
             flash('Your post has negative sentiment! Please modify your post', 'warning')
