@@ -47,6 +47,15 @@
       {% else %}
         <p class="text-muted">Please <a href="{{ url_for('login') }}">sign in</a> to post an answer.</p>
       {% endif %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flash-messages">
+            {% for message in messages %}
+              <li class="flash-message">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
     </div>
   </div>
 </div>

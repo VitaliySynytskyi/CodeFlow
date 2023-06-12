@@ -7,22 +7,7 @@ from flask_login import current_user, login_required
 from app import app, db
 from models import Post
 from forms import PostForm, SearchForm
-from azure.ai.textanalytics import TextAnalyticsClient
-from azure.core.credentials import AzureKeyCredential
-
-def authenticate_client():
-    ta_credential = AzureKeyCredential(os.getenv('AzureKeyCredential'))
-    text_analytics_client = TextAnalyticsClient(
-            endpoint=os.getenv('endpoint'), 
-            credential=ta_credential)
-    return text_analytics_client
-
-client = authenticate_client()
-
-def sentiment_analysis_example(client, text):
-    document = [text]
-    response = client.analyze_sentiment(documents=document)[0]
-    return response.sentiment
+from utils import client, sentiment_analysis_example
 
 @app.route('/blog')
 def blog():
