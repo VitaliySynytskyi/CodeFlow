@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}New Answer - CodeFlow{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="mb-4">New Answer</h1>
+      <form method="POST" action="{{ url_for('new_answer', question_id=question_id) }}">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          {{ form.text.label(class="form-label") }}
+          {{ form.text(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -83,3 +83,13 @@ class PostForm(FlaskForm):
 class SearchForm(FlaskForm):
     query = StringField('Post Title', validators=[DataRequired()])
     submit = SubmitField('Search')    
+
+class QuestionForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    details = TextAreaField('Details', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class AnswerForm(FlaskForm):
+    text = TextAreaField('Text', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Question Detail - CodeFlow{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="mb-4">{{ question.title }}</h1>
+      <div class="card mb-4">
+        <div class="card-body">
+          <p class="card-text">{{ question.details }}</p>
+          <p class="card-text"><strong>Author:</strong> {{ question.user.username }}</p>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Answers</h5>
+          {% if question.answers %}
+            {% for answer in question.answers %}
+              <div class="card mb-3">
+                <div class="card-body">
+                  <p class="card-text" style="white-space: pre-wrap;">{{ answer.text }}</p>
+                  <p class="card-text"><strong>Author:</strong> {{ answer.user.username }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p>No answers available.</p>
+          {% endif %}
+        </div>
+      </div>
+      {% if current_user.is_authenticated %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Your Answer</h5>
+            <form method="POST" action="{{ url_for('new_answer', question_id=question.id) }}">
+              {{ form.hidden_tag() }}
+              <div class="mb-3">
+                {{ form.text.label(class="form-label") }}
+                {{ form.text(class="form-control") }}
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      {% else %}
+        <p class="text-muted">Please <a href="{{ url_for('login') }}">sign in</a> to post an answer.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

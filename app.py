@@ -49,6 +49,7 @@ from cats import *
 from authentication import *
 from blog import *
 from profile_1 import *
+from qa import *
 
 @login_manager.user_loader
 def load_user(user_id):

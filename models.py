@@ -31,3 +31,18 @@ class Post(db.Model):
     
     def __repr__(self):
         return f'{self.__class__.__name__}({self.id}, {self.title})'
+
+class Question(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    details = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref='questions')
+    answers = db.relationship('Answer', backref='question', lazy=True)
+
+class Answer(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref='answers')
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id'))

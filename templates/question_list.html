@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Question List - CodeFlow{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mb-4">Question List</h1>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="mb-0">Questions</h2>
+      <a href="{{ url_for('new_question') }}" class="btn btn-primary">Create New Question</a>
+    </div>
+    {% if questions %}
+      <div class="list-group">
+        {% for question in questions %}
+          <a href="{{ url_for('question_detail', question_id=question.id) }}" class="list-group-item list-group-item-action">
+            <h5 class="mb-1">{{ question.title }}</h5>
+            <p class="mb-1">{{ question.details }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No questions available.</p>
+    {% endif %}
+  </div>
+{% endblock %}
