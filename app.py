@@ -12,6 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 from authlib.integrations.flask_client import OAuth
 from applicationinsights.flask.ext import AppInsights
+from applicationinsights import TelemetryClient
 
 from config import Config
 
@@ -23,6 +24,7 @@ app.secret_key = os.urandom(12)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 logger = logging.getLogger(__name__)
 
+telemetry_client = TelemetryClient(os.getenv('APPINSIGHTS_INSTRUMENTATIONKEY'))
 oauth = OAuth(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
