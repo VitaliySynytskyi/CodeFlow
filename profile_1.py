@@ -5,11 +5,17 @@ from app import app, db
 from flask_login import current_user, login_required
 
 from forms import UpdateProfileForm
+from models import Answer, Question
 
 @app.route("/profile/", methods=("GET", "POST"), strict_slashes=False)
 @login_required
 def profile():
-    return render_template('profile.html')
+    # Отримати списки питань та відповідей користувача
+    questions = Question.query.filter_by(user_id=current_user.id).all()
+    answers = Answer.query.filter_by(user_id=current_user.id).all()
+    
+    return render_template('profile.html', questions=questions, answers=answers)
+
 
 @app.route('/change', methods=['GET', 'POST'])
 @login_required

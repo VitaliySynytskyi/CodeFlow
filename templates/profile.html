@@ -4,8 +4,8 @@
 {% block content %}
   {% with messages = get_flashed_messages() %}
     {% if messages %}
-      <div class="alert alert-success">
-        <ul>
+      <div class="alert alert-success" role="alert">
+        <ul class="list-unstyled mb-0">
           {% for message in messages %}
             <li>{{ message }}</li>
           {% endfor %}
@@ -35,25 +35,31 @@
     </div>
     <div class="col-md-9">
       <div class="card mb-3">
-        <div class="card-header">Questions and Answers</div>
+        <div class="card-header">Questions</div>
         <div class="card-body">
           {% if questions %}
-            <h5>Questions:</h5>
-            <ul class="list-group">
+            <div class="list-group">
               {% for question in questions %}
-                <li class="list-group-item"><a href="{{ url_for('home', question_id=question.id) }}">{{ question.title }}</a></li>
+                <a href="{{ url_for('question_detail', question_id=question.id) }}" class="list-group-item list-group-item-action">{{ question.title }}</a>
               {% endfor %}
-            </ul>
+            </div>
           {% else %}
             <p>No questions found.</p>
           {% endif %}
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">Answers</div>
+        <div class="card-body">
           {% if answers %}
-            <h5>Answers:</h5>
-            <ul class="list-group">
+            <div class="list-group">
               {% for answer in answers %}
-                <li class="list-group-item"><a href="{{ url_for('home', question_id=answer.question_id) }}">{{ answer.question.title }}</a></li>
+                <a href="{{ url_for('question_detail', question_id=answer.question_id) }}" class="list-group-item list-group-item-action">
+                  <h5 class="mb-1">{{ answer.question.title }}</h5>
+                  <p class="mb-1">{{ answer.text[:50] }}...</p>
+                </a>
               {% endfor %}
-            </ul>
+            </div>
           {% else %}
             <p>No answers found.</p>
           {% endif %}
