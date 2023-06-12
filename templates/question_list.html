@@ -5,11 +5,13 @@
 {% block content %}
 {% with messages = get_flashed_messages() %}
 {% if messages %}
-  <ul class="flash-messages">
-    {% for message in messages %}
-      <li class="flash-message">{{ message }}</li>
-    {% endfor %}
-  </ul>
+<div class="alert-success">
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 {% endwith %}
   <div class="container">
