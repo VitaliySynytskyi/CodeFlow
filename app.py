@@ -44,12 +44,17 @@ def session_handler():
     session.permanent = True
     app.permanent_session_lifetime = timedelta(days=31)
 
+from flasgger.utils import swag_from
+
+
+
 from home import *
 from cats import *
 from authentication import *
 from blog import *
 from profile_1 import *
 from qa import *
+from health import *
 
 @login_manager.user_loader
 def load_user(user_id):
